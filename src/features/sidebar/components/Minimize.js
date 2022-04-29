@@ -27,13 +27,17 @@ const Minimize = ({ open, setOpen }) => {
   if (open) {
     return (
       <StyledButton open={open} onClick={() => setOpen(!open)}>
-        <TiArrowRightThick />
+        <IconContext.Provider value={{ size: "23" }}>
+          <TiArrowRightThick />
+        </IconContext.Provider>
       </StyledButton>
     );
   } else
     return (
       <StyledButton open={open} onClick={() => setOpen(!open)}>
-        <TiArrowLeftThick />
+        <IconContext.Provider value={{ size: "23" }}>
+          <TiArrowLeftThick />
+        </IconContext.Provider>
       </StyledButton>
     );
 };

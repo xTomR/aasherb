@@ -7,11 +7,11 @@ import { BsPersonFill } from "react-icons/bs";
 const ToolbarDiv = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   width: 30px;
   height: 100%;
-  margin: 0.75rem 1rem 1rem 0.5rem;
+  margin: 0 1rem 1rem 0.5rem;
   position: absolute;
-  top: 100px;
 `;
 
 const Toolbar = ({
@@ -22,11 +22,13 @@ const Toolbar = ({
   dispatchRoute,
   children,
   dispatchSearchBar,
+  user,
 }) => {
   return (
     <ToolbarDiv>
       {children}
       <Button
+        style={{ marginTop: "100px" }}
         icon={<FaSearch />}
         onClick={() => dispatchSearchBar()}
         toggle={searchbar}
@@ -37,7 +39,8 @@ const Toolbar = ({
         toggle={route}
       />
       <Button
-        icon={<BsPersonFill />}
+        style={{ marginTop: "auto" }}
+        image={user.memoedValue.user.data.image}
         onClick={() => dispatchProfile()}
         toggle={profile}
       />

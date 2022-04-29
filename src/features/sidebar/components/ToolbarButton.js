@@ -5,6 +5,8 @@ const Button = styled.button`
   color: ${({ toggle }) => (toggle ? "#027FBF" : "white")};
   width: ${({ width }) => (width ? width : "32px")};
   height: ${({ height }) => (height ? height : "32px")};
+  background-image: ${({ image }) => (image ? `url(${image};)` : "none;")};
+  background-size: cover;
   border-radius: 0.5rem;
   margin-bottom: 0.75rem;
   align-items: center;
@@ -18,9 +20,24 @@ const Button = styled.button`
   }
 `;
 
-const ToolbarButton = ({ icon, onClick, toggle, width, height }) => {
+const ToolbarButton = ({
+  icon,
+  onClick,
+  toggle,
+  width,
+  height,
+  image,
+  style,
+}) => {
   return (
-    <Button onClick={onClick} toggle={toggle} width={width} height={height}>
+    <Button
+      style={style}
+      onClick={onClick}
+      toggle={toggle}
+      width={width}
+      height={height}
+      image={image}
+    >
       {icon}
     </Button>
   );

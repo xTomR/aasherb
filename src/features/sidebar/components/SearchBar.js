@@ -44,6 +44,7 @@ const StyledComboboxList = styled(ComboboxList)`
 `;
 
 const StyledComboboxPopover = styled(ComboboxPopover)`
+  font-family: "Poppins";
   z-index: 40;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
@@ -53,8 +54,10 @@ const StyledComboboxPopover = styled(ComboboxPopover)`
 `;
 
 const StyledCombobox = styled(Combobox)`
+  font-family: "Poppins";
   position: absolute;
   height: 32px;
+  top: 100px;
   right: 72px;
   display: flex;
   width: 300px;

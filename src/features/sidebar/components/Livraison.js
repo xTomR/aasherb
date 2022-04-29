@@ -41,6 +41,7 @@ const LivraisonContainer = styled.div`
     line-height: 1.25rem;
     text-decoration-line: underline;
     text-underline-offset: 4px;
+    margin: 0;
   }
   & li {
     display: grid;
@@ -51,6 +52,7 @@ const LivraisonContainer = styled.div`
     color: #a7a6a6;
     font-size: 0.75rem;
     line-height: 1rem;
+    margin: 0;
   }
   & ul:last-child {
     position: absolute;

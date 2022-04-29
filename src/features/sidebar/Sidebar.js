@@ -113,8 +113,8 @@ const Sidebar = ({ delivery }) => {
           dispatchProfile={dispatchProfile}
           dispatchRoute={dispatchRoute}
           dispatchSearchBar={dispatchSearchBar}
+          user={user}
         >
-          {profile ? <Profile user={user} handleLogout={handleLogout} /> : null}
           <Searchbar
             setCall={(position) => {
               dispatch(setDeliveryCall(position));
@@ -160,6 +160,7 @@ const Sidebar = ({ delivery }) => {
             );
           })}
         </Deliveries>
+        {profile ? <Profile user={user} handleLogout={handleLogout} /> : null}
       </SidebarWrapper>
     </>
   );

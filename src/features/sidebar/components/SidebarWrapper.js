@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+  grid-template-rows: 100px auto 55px;
   height: 90vh;
   width: 360px;
   position: fixed;

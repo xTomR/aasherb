@@ -9,7 +9,7 @@ const Container = styled.div`
   padding: 0.75rem;
   border-radius: 0.75rem;
   bottom: 0;
-  right: 260px;
+  right: 288px;
   transition-property: all;
   transition-duration: 400ms;
   transform: translateX(-3rem);
@@ -18,6 +18,7 @@ const Container = styled.div`
     color: white;
     text-align: center;
     padding-bottom: 0.5rem;
+    font-size: 1.25rem;
   }
 `;
 

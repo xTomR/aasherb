@@ -5,11 +5,9 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-evenly;
   width: 280px;
-  height: auto;
-  align-items: flex-end;
-  overflow: hidden;
-  margin: auto;
-  margin-top: 1rem;
+  height: 100px;
+  align-items: center;
+
   margin-left: 56px;
   ${({ open }) => {
     if (!open) {
@@ -20,8 +18,7 @@ const StyledHeader = styled.header`
   & h1 {
     color: rgb(255, 255, 255);
     font-family: "Anton", sans-serif;
-    font-size: 1.5rem;
-    line-height: 4.5rem;
+    font-size: 1.25rem;
   }
   & img {
     width: 80px;

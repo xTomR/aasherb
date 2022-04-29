@@ -13,7 +13,7 @@ const Container = styled.div`
   padding: 0.5rem 0.75rem;
   border-radius: 0.75rem;
   right: 24px;
-  bottom: 112px;
+  bottom: 0px;
   transition-property: all;
   transition-duration: 400ms;
   transform: translateX(-3rem);
@@ -24,12 +24,11 @@ const Container = styled.div`
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    padding: 0.1rem;
+    padding: 0.5rem;
 
     h1 {
       font-family: "Anton", sans-serif;
-      font-size: 1.5rem;
-      line-height: 4.5rem;
+      font-size: 1.25rem;
     }
   }
 
@@ -41,6 +40,7 @@ const Container = styled.div`
     & h2 {
       color: white;
       margin-left: 1rem;
+      font-size: 0.75rem;
     }
   }
 `;
@@ -58,6 +58,7 @@ const StyledDiv = styled.div`
   & h1 {
     padding-left: 0.5rem;
     color: #a7a6a6;
+    font-size: 1rem;
   }
 `;
 

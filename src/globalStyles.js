@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 
 html {
+  font-size: 16px;
   line-height: 1.15; 
   -webkit-text-size-adjust: 100%; 
 }
@@ -16,8 +17,9 @@ main {
 }
 
 h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+  font-size: 1.25rem;
+  margin: 0;
+  /* margin: 0.67em 0; */
 }
 
 hr {

@@ -7,6 +7,8 @@ const Button = styled.button`
   height: ${({ height }) => (height ? height : "32px")};
   background-image: ${({ image }) => (image ? `url(${image};)` : "none;")};
   background-size: cover;
+  border: ${({ toggle, image }) =>
+    toggle && image ? "2px solid white" : "none;"};
   border-radius: 0.5rem;
   margin-bottom: 0.75rem;
   align-items: center;

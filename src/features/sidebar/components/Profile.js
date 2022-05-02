@@ -7,12 +7,13 @@ const ProfileCard = styled.div`
   color: white;
   width: auto;
   display: flex;
-  justify-content: center;
-  margin-left: 2.25rem;
+  justify-content: space-between;
+  margin-left: 1.75rem;
 
   & span {
-    padding: 0.25rem 1rem;
     font-size: 1rem;
+    padding-right: 0.5rem;
+    align-self: center;
   }
 
   & Button {
@@ -21,28 +22,26 @@ const ProfileCard = styled.div`
 `;
 
 const Container = styled.div`
-  width: 240px;
+  width: 310px;
   height: fit-content;
-  /* background-color: rgb(55, 65, 81, 0.8); */
   border-radius: 1rem;
   font-size: 0.875 rem;
   margin: auto;
 `;
 
-const Profile = (user, handleLogout) => {
-  console.log(user);
+const Profile = ({ user, handleLogout }) => {
   return (
     <>
       <Container>
         <ProfileCard>
-          <div>
-            <Button
-              bgColor="#BC301C"
-              text="Logout"
-              onClick={() => handleLogout}
-              width="fit-content"
-            ></Button>
-          </div>
+          {/*  */}
+          <span>{user.memoedValue.user.data.displayName}</span>
+          <Button
+            bgColor="#BC301C"
+            text="Logout"
+            handleOnClick={() => handleLogout()}
+            width="fit-content"
+          ></Button>
         </ProfileCard>
       </Container>
     </>

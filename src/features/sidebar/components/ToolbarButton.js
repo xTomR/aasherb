@@ -5,7 +5,7 @@ const Button = styled.button`
   color: ${({ toggle }) => (toggle ? "#027FBF" : "white")};
   width: ${({ width }) => (width ? width : "32px")};
   height: ${({ height }) => (height ? height : "32px")};
-  background-image: ${({ image }) => (image ? `url(${image};)` : "none;")};
+  background-image: ${({ image }) => (image ? `url(${image})` : "none;")};
   background-size: cover;
   border: ${({ toggle, image }) =>
     toggle && image ? "2px solid white" : "none;"};

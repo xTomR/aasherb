@@ -49,7 +49,6 @@ function Home() {
     return (
       <>
         <Wrapper>
-          {/* <Map delivery={delivery} />' */}
           <GoogleMapContainer delivery={delivery} />'
           <Sidebar delivery={delivery} />
         </Wrapper>

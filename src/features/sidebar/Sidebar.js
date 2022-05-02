@@ -41,6 +41,7 @@ const Sidebar = ({ delivery }) => {
 
   const activeMarker = useSelector((state) => state.googleMap.activeMarker);
   const waypointNames = useSelector((state) => state.googleMap.waypointNames);
+  const addresses = useSelector((state) => state.googleMap.addresses);
 
   const dispatch = useDispatch();
 
@@ -83,15 +84,18 @@ const Sidebar = ({ delivery }) => {
         const lng = x?.end_location.lng();
         return { lat, lng };
       });
-
+      // TODO:
+      // Call the a function that calls the API to get all the addresses and send waypoints as a parameter
+      // return an object with waypoints and place ids
       let thewaypoints = "";
+      let thewaypointsPlaceIds = "";
       for (let value of Object.values(waypoints)) {
         for (value of Object.values(value)) {
           thewaypoints = thewaypoints.concat(" ", value);
         }
         thewaypoints = thewaypoints.concat(" |");
       }
-      const message = `https://www.google.com/maps/dir/?api=1&origin=Your%20Location&destination=${destination}&waypoints=${thewaypoints}`;
+      const message = `https://www.google.com/maps/dir/?api=1&origin=Your%20Location&destination=${destination}&waypoints=${thewaypoints}&waypoint_place_ids=${thewaypointsPlaceIds}`;
       const testMessage = message.replace(/[ ]/g, "%20");
       return testMessage;
     } else {
@@ -160,7 +164,9 @@ const Sidebar = ({ delivery }) => {
             );
           })}
         </Deliveries>
-        {profile ? <Profile user={user} handleLogout={handleLogout} /> : null}
+        {profile && open ? (
+          <Profile user={user} handleLogout={handleLogout} />
+        ) : null}
       </SidebarWrapper>
     </>
   );

@@ -39,6 +39,19 @@ const GoogleMapContainer = ({ delivery }) => {
   }, [deliveryCall]);
 
   useEffect(() => {
+    if (directions != null) {
+      console.log(directions);
+      const test = directions.routes[0].legs.map((e) => {
+        return e.end_address;
+      });
+      const test2 = delivery.map((e) => {
+        return e.address;
+      });
+      console.log(test);
+    }
+  }, [directions]);
+
+  useEffect(() => {
     fetchDirections(
       deliveryCall,
       waypoints,
@@ -87,7 +100,7 @@ const GoogleMapContainer = ({ delivery }) => {
   );
 
   // Functions
-  const waypointObject = (latlng, delivery) => {
+  const waypointObject = (latlng, delivery, directions) => {
     if (deliveryCall) {
       const waypoint = {
         location: { lat: latlng.lat(), lng: latlng.lng() },
@@ -107,6 +120,9 @@ const GoogleMapContainer = ({ delivery }) => {
         waypointName.slice(index, 1);
       } else {
         const newWaypointNames = [...waypointNames, waypointName];
+        const test = directions.routes[0].legs.map((e) => {
+          return e.end_address;
+        });
         dispatch(setWaypointName(newWaypointNames));
       }
     }
@@ -175,10 +191,10 @@ const GoogleMapContainer = ({ delivery }) => {
                   onMouseOver={() => {
                     handleActiveMarker(delivery.id);
                   }}
-                  // onMouseOut={handleOnClickMarker(delivery.id).inactive}
                   onClick={(event) => {
                     handleActiveMarker(delivery.id);
-                    waypointObject(event.latLng, delivery);
+                    setDirections({ ...directions });
+                    waypointObject(event.latLng, delivery, directions);
                   }}
                 ></Marker>
               </div>

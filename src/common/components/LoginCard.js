@@ -5,43 +5,60 @@ import styled from "styled-components";
 import bg from "./test.png";
 
 const Card = styled.div`
-  min-width: 360px;
+  min-width: 320px;
   min-height: 200px;
   margin: 0 auto 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  background-color: rgb(55, 65, 81, 0.3);
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: transparent;
+  box-shadow: 4px 4px 6px 4px rgb(0 0 0 / 0.1), 4px 2px 4px 4px rgb(0 0 0 / 0.1);
   border-radius: 0.5rem;
   justify-items: center;
+  /* border-left: 10px #017dc3 solid; */
+
+  & p {
+    margin: auto;
+    padding-bottom: 1rem;
+    color: rgb(54, 54, 54);
+    font-family: Poppins;
+    font-size: 0.875rem;
+  }
+
+  & span {
+    display: flex;
+    justify-content: space-evenly;
+    width: 280px;
+    height: 100px;
+    align-items: center;
+    margin: 0 auto;
+
+    & img {
+      width: 80px;
+      height: 80px;
+    }
+  }
 
   & h1 {
+    color: rgb(255, 255, 255);
     font-family: "Anton", sans-serif;
     font-size: 1.25rem;
-    color: white;
-    padding: 0 1rem 5rem 1rem;
-    align-self: center;
-  }
-  & h2 {
-    color: white;
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    text-align: center;
-    margin: auto;
-    padding: 0 1rem 5rem 1rem;
   }
 
-  & img {
+  & h2 {
+    color: white;
+    font-family: "Anton", sans-serif;
+    font-size: 1.875rem;
+    text-align: center;
     margin: auto;
-    height: fit-content;
-    width: fit-content;
-    padding: 1rem;
+    padding: 2rem 1rem 1rem 1rem;
+    height: 10px;
   }
+
   & Button {
-    margin: auto auto 20px auto;
-    grid-column-start: 1;
-    grid-column-end: span col2-start;
+    margin: auto;
+    box-shadow: 4px 4px 6px -2px rgb(0 0 0 / 0.1),
+      4px 2px 4px -1px rgb(0 0 0 / 0.1);
   }
 `;
 
@@ -50,23 +67,7 @@ const Container = styled.div`
   width: 100vw;
   display: grid;
   align-content: center;
-  background-color: rgb(0, 0, 0, 0.9);
-
-  /* background-image: linear-gradient(
-    to right bottom,
-    #312d8e,
-    #092d79,
-    #002962,
-    #00234a,
-    #041c31,
-    #051c27,
-    #0e1b1e,
-    #171818,
-    #1c1d1d,
-    #212222,
-    #262727,
-    #2b2c2c
-  ); */
+  background-color: rgb(0, 0, 0, 0.8);
 `;
 
 const GoogleButton = styled.button`
@@ -94,8 +95,11 @@ const LoginCard = ({ handleLogin, success, failure }) => {
     <>
       <Container>
         <Card>
-          <h1>Le Groupe A&A</h1>
-          <img src={logo} alt="" />
+          <span>
+            <h1>Le Groupe A&A</h1>
+            <img src={logo} alt="" />
+          </span>
+          <h2>Login</h2>
           {success ? <h1>You will be redirected soon</h1> : null}
           {failure ? (
             <>
@@ -104,13 +108,18 @@ const LoginCard = ({ handleLogin, success, failure }) => {
             </>
           ) : null}
           {handleLogin ? (
-            <GoogleButton onClick={handleLogin}>
-              {" "}
-              <IconContext.Provider value={{ className: "googleLogo" }}>
-                <BsGoogle />
-              </IconContext.Provider>
-              <span>Sign in with Google</span>
-            </GoogleButton>
+            <>
+              <span>
+                <GoogleButton onClick={handleLogin}>
+                  {" "}
+                  <IconContext.Provider value={{ className: "googleLogo" }}>
+                    <BsGoogle />
+                  </IconContext.Provider>
+                  <div>Continue with Google</div>
+                </GoogleButton>
+              </span>
+              <p>Not able to log in with google ?</p>
+            </>
           ) : null}
         </Card>
       </Container>

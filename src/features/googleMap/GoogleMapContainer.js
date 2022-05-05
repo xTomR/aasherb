@@ -39,11 +39,15 @@ const GoogleMapContainer = ({ delivery }) => {
   }, [deliveryCall]);
 
   useEffect(() => {
-    if (directions != null) {
+    if (directions != null && undefined) {
       console.log(directions);
-      const test = directions.routes[0].legs.map((e) => {
-        return e.end_address;
-      });
+      if (directions.routes) {
+        const test = directions.routes[0]?.legs.map((e) => {
+          return e.end_address;
+        });
+      } else {
+        return null;
+      }
       const test2 = delivery.map((e) => {
         return e.address;
       });

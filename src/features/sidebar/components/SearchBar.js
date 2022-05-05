@@ -60,7 +60,7 @@ const StyledCombobox = styled(Combobox)`
   top: 100px;
   right: 72px;
   display: flex;
-  width: 300px;
+  width: 324px;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   /* border-top-left-radius: 1rem;

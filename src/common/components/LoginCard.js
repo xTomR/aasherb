@@ -2,11 +2,10 @@ import { BsGoogle } from "react-icons/bs";
 import { IconContext } from "react-icons";
 import logo from "../assets/imgs/LogoAA.svg";
 import styled from "styled-components";
-import bg from "./test.png";
 
 const Card = styled.div`
   min-width: 320px;
-  min-height: 200px;
+  min-height: 300px;
   margin: 0 auto 0 auto;
   display: flex;
   justify-content: space-around;
@@ -18,9 +17,9 @@ const Card = styled.div`
   /* border-left: 10px #017dc3 solid; */
 
   & p {
-    margin: auto;
+    margin: 0 auto;
     padding-bottom: 1rem;
-    color: rgb(54, 54, 54);
+    color: rgb(170, 170, 170);
     font-family: Poppins;
     font-size: 0.875rem;
   }
@@ -32,11 +31,6 @@ const Card = styled.div`
     height: 100px;
     align-items: center;
     margin: 0 auto;
-
-    & img {
-      width: 80px;
-      height: 80px;
-    }
   }
 
   & h1 {
@@ -52,7 +46,6 @@ const Card = styled.div`
     text-align: center;
     margin: auto;
     padding: 2rem 1rem 1rem 1rem;
-    height: 10px;
   }
 
   & Button {
@@ -66,8 +59,16 @@ const Container = styled.div`
   height: 100vh;
   width: 100vw;
   display: grid;
-  align-content: center;
-  background-color: rgb(0, 0, 0, 0.8);
+  align-content: start;
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #434343 74%);
+
+  & img {
+    margin: 2rem auto;
+    width: 150px;
+    height: 150px;
+    padding-bottom: 1rem;
+  }
 `;
 
 const GoogleButton = styled.button`
@@ -90,23 +91,42 @@ const GoogleButton = styled.button`
   }
 `;
 
+const Title = styled.div`
+  font-family: Anton;
+  font-weight: 600;
+  color: white;
+  margin: auto;
+  font-size: 5rem;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+  letter-spacing: 5px;
+`;
+
 const LoginCard = ({ handleLogin, success, failure }) => {
   return (
     <>
       <Container>
+        <img src={logo} alt="" />
+        <Title>Le Groupe A&A</Title>
+
         <Card>
-          <span>
-            <h1>Le Groupe A&A</h1>
-            <img src={logo} alt="" />
-          </span>
-          <h2>Login</h2>
-          {success ? <h1>You will be redirected soon</h1> : null}
-          {failure ? (
-            <>
-              <h1>Unauthorized</h1>
-              <h2>Please login with different Google account</h2>
-            </>
-          ) : null}
+          {/* <span>
+            <h1>Le Groupe A&A</h1> 
+             
+          </span> */}
+
+          <div>
+            {success ? <h2>Success</h2> : <h2>Login</h2>}
+
+            {success ? <h2>You will be redirected soon</h2> : null}
+            {failure ? (
+              <>
+                <h1>Unauthorized</h1>
+                <h2>Please login with different Google account</h2>
+              </>
+            ) : null}
+          </div>
+
           {handleLogin ? (
             <>
               <span>

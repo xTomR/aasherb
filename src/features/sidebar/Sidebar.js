@@ -76,6 +76,7 @@ const Sidebar = ({ delivery }) => {
   const handleQRCode = () => {
     if (directions != null && {}) {
       // const origin = directions?.routes[0]?.legs[0].start_address;
+      console.log(directions);
       const destination =
         directions?.routes[0]?.legs[[directions.routes[0]?.legs.length - 1]]
           .end_address;

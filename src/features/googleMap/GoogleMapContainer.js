@@ -56,6 +56,7 @@ const GoogleMapContainer = ({ delivery }) => {
   }, [directions]);
 
   useEffect(() => {
+    console.log(waypoints);
     fetchDirections(
       deliveryCall,
       waypoints,
@@ -197,7 +198,6 @@ const GoogleMapContainer = ({ delivery }) => {
                   }}
                   onClick={(event) => {
                     handleActiveMarker(delivery.id);
-                    setDirections({ ...directions });
                     waypointObject(event.latLng, delivery, directions);
                   }}
                 ></Marker>

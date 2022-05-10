@@ -67,7 +67,7 @@ const Sidebar = ({ delivery }) => {
   }, [directions]);
 
   const handleLogout = async () => {
-    await axios.get("http://localhost:5000/auth/logout", {
+    await axios.get(`${process.env.API_ENDPOINT}/auth/logout`, {
       withCredentials: true,
     });
     user.logout();

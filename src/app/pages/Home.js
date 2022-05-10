@@ -17,7 +17,7 @@ function Home() {
   const [dataLoaded, setDataLoaded] = useState(false);
   const [delivery, setDelivery] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:5000/api/deliveries").then(
+    axios.get(`${process.env.API_ENDPOINT}/deliveries`).then(
       (result) => {
         const realData = result.data.map((x) => {
           return x;

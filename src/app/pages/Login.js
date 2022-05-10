@@ -13,7 +13,8 @@ const Login = () => {
   }, []);
 
   const fetchUser = async () => {
-    const response = await axios.get("http://localhost:5000/auth/login", {
+    console.log(process.env.URL);
+    const response = await axios.get(`${process.env.URL}/auth/login`, {
       withCredentials: true,
     });
     if (response && response.data) {
@@ -25,7 +26,7 @@ const Login = () => {
 
   function handleLogin() {
     let newWindow = window.open(
-      "http://localhost:5000/auth/google",
+      `${process.env.API_ENDPOINT}/auth/google`,
       "__blank",
       "width=400,height=600,left=200,top=200"
     );

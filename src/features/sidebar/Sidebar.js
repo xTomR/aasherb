@@ -165,9 +165,7 @@ const Sidebar = ({ delivery }) => {
             );
           })}
         </Deliveries>
-        {profile && open ? (
-          <Profile user={user} handleLogout={handleLogout} />
-        ) : null}
+        {open ? <Profile user={user} handleLogout={handleLogout} /> : null}
       </SidebarWrapper>
     </>
   );

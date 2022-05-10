@@ -20,6 +20,9 @@ const Button = styled.button`
     margin: auto;
     border: none;
   }
+  &:active {
+    transform: scale(0.95);
+  }
 `;
 
 const ToolbarButton = ({

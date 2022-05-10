@@ -34,7 +34,6 @@ const Profile = ({ user, handleLogout }) => {
     <>
       <Container>
         <ProfileCard>
-          {/*  */}
           <span>{user.memoedValue.user.data.displayName}</span>
           <Button
             bgColor="#BC301C"

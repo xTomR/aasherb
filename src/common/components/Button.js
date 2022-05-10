@@ -13,6 +13,13 @@ const StyledButton = styled.button`
   transition-duration: 200ms;
   padding: 0.5rem;
   border: none;
+
+  &:hover {
+    background-color: #aa2f1c;
+  }
+  &:active {
+    transform: scale(0.95);
+  }
 `;
 
 const Button = ({

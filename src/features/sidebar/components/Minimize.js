@@ -15,6 +15,9 @@ const StyledButton = styled.button`
   text-align: center;
   background-color: white;
   color: black;
+  &:active {
+    transform: scale(0.95);
+  }
   ${({ open }) => {
     if (!open) {
       return "background-color: rgb(55, 65, 81); color: white";

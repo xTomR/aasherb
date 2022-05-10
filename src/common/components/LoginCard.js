@@ -7,9 +7,12 @@ import bgImage from "../assets/imgs/bg-image.jpg";
 const Background = styled.div`
   position: absolute;
   z-index: -10;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.3);
   background-blend-mode: darken;
   background-image: url(${bgImage});
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -19,8 +22,8 @@ const Background = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(10px); /* apply the blur */
-    pointer-events: none; /* make the overlay click-through */
+    backdrop-filter: blur(10px);
+    pointer-events: none;
   }
 `;
 
@@ -28,10 +31,8 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-evenly;
   width: 280px;
-  height: 100px;
-  align-items: center;
-
-  margin: auto;
+  margin: 2rem auto;
+  /* padding-top: 3rem; */
 
   & h5 {
     color: rgb(255, 255, 255);
@@ -45,32 +46,32 @@ const StyledHeader = styled.header`
 `;
 
 const Card = styled.div`
-  grid-template-rows: 100px auto 55px;
   height: 90vh;
   width: 360px;
   position: fixed;
-  /* display: grid; */
-  margin-top: 2rem;
-  background-color: rgb(55 65 81 /0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 2rem;
+  margin-top: 3rem;
+  background-color: rgb(55 65 81 /0.7);
   border-radius: 0.75rem;
   margin-left: auto;
   right: 10px;
   left: 0px;
-  /* border-left: 10px #017dc3 solid; */
 
   & p {
-    margin: 0 auto;
-    padding-bottom: 1rem;
     color: rgb(170, 170, 170);
     font-family: Poppins;
     font-size: 0.875rem;
+    width: fit-content;
+    margin: auto;
+    text-decoration: underline;
   }
 
   & span {
     display: flex;
     justify-content: space-evenly;
-    width: 280px;
-    height: 100px;
     align-items: center;
     margin: 0 auto;
   }
@@ -86,8 +87,8 @@ const Card = styled.div`
     font-family: "Anton", sans-serif;
     font-size: 1.875rem;
     text-align: center;
-    margin: auto;
-    padding: 2rem 1rem 1rem 1rem;
+    margin: 0;
+    /* padding: 1rem 1rem 1rem 1rem; */
   }
 
   & Button {
@@ -111,6 +112,14 @@ const GoogleButton = styled.button`
   line-height: 1rem;
   font-family: "Poppins", sans-serif;
 
+  &:hover {
+    background-color: #aa2f1c;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
   .googleLogo {
     width: 1.25rem;
     height: 1.25rem;
@@ -126,29 +135,36 @@ const LoginCard = ({ handleLogin, success, failure }) => {
           <h5>Le Groupe A&A</h5>
           <img src={logo} alt="" />
         </StyledHeader>
-        <div>
-          {success ? <h2>Success</h2> : <h2>Login</h2>}
 
-          {success ? <h2>You will be redirected soon</h2> : null}
-          {failure ? (
-            <>
-              <h1>Unauthorized</h1>
-              <h2>Please login with different Google account</h2>
-            </>
-          ) : null}
-        </div>
+        {success ? <h2>Success</h2> : <h2>Login</h2>}
+        {success ? <h2>You will be redirected soon</h2> : null}
+        {failure ? (
+          <>
+            <h1>Unauthorized</h1>
+            <h2>Please login with different Google account</h2>
+          </>
+        ) : null}
         {handleLogin ? (
           <>
             <span>
               <GoogleButton onClick={handleLogin}>
-                {" "}
                 <IconContext.Provider value={{ className: "googleLogo" }}>
                   <BsGoogle />
                 </IconContext.Provider>
+
                 <div>Continue with Google</div>
               </GoogleButton>
             </span>
-            <p>Not able to log in with google ?</p>
+            <div>
+              <p
+                onClick={() =>
+                  (window.location =
+                    "mailto:troy@groupeaa.com?subject=Request access to AASherb&body=Hi, I would like to have access to AASherb")
+                }
+              >
+                Request access to AASherb
+              </p>
+            </div>
           </>
         ) : null}
       </Card>

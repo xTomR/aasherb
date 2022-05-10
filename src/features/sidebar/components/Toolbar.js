@@ -41,8 +41,6 @@ const Toolbar = ({
       <Button
         style={{ marginTop: "auto" }}
         image={user.memoedValue.user.data.image}
-        onClick={() => dispatchProfile()}
-        toggle={profile}
       />
     </ToolbarDiv>
   );

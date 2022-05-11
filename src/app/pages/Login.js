@@ -13,11 +13,11 @@ const Login = () => {
   }, []);
 
   const fetchUser = async () => {
-    console.log(process.env.URL);
     const response = await axios.get(`https://api.aasherb.com/auth/login`, {
       withCredentials: true,
     });
     if (response && response.data) {
+      console.log(response);
       user.setUser(response);
       user.setLoggedIn(true);
       navigate("/deliveries");

@@ -22,12 +22,14 @@ export function AuthProvider({ children }) {
 
   const fetchAuthUser = () => {
     axios
-      .get(`https://api.aasherb.com//auth/login`, { withCredentials: true })
+      .get(`https://api.aasherb.com/auth/login`, { withCredentials: true })
       .then((user) => {
         setUser(user);
         setLoggedIn(true);
       })
-      .catch((err) => {})
+      .catch((err) => {
+        console.log(err);
+      })
       .finally(() => setLoading(false));
   };
   useEffect(() => {

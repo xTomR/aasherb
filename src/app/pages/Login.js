@@ -12,17 +12,17 @@ const Login = () => {
     user.setLoggedIn(false);
   }, []);
 
-  // const fetchUser = async () => {
-  //   console.log(process.env.URL);
-  //   const response = await axios.get(`https://api.aasherb.com/auth/login`, {
-  //     withCredentials: true,
-  //   });
-  //   if (response && response.data) {
-  //     user.setUser(response);
-  //     user.setLoggedIn(true);
-  //     navigate("/deliveries");
-  //   }
-  // };
+  const fetchUser = async () => {
+    console.log(process.env.URL);
+    const response = await axios.get(`https://api.aasherb.com/auth/login`, {
+      withCredentials: true,
+    });
+    if (response && response.data) {
+      user.setUser(response);
+      user.setLoggedIn(true);
+      navigate("/deliveries");
+    }
+  };
 
   function handleLogin() {
     let newWindow = window.open(

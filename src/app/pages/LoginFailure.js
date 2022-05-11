@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 
 const LoginFailure = () => {
   const clearCookie = async () => {
-    await axios.get(`https://api.aasherb.com//auth/logout`, {
+    await axios.get(`https://api.aasherb.com/auth/logout`, {
       withCredentials: true,
     });
   };

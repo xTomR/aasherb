@@ -2,7 +2,7 @@
   "name": "aasherb",
   "description": "Groupe A&A Sherbrooke Website",
   "version": "0.9.1",
-  "homepage": ".",
+  "homepage": "aasherb.netlify.app",
   "private": true,
   "dependencies": {
     "@reach/combobox": "^0.16.5",

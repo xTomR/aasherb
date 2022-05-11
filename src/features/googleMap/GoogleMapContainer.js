@@ -56,7 +56,6 @@ const GoogleMapContainer = ({ delivery }) => {
   }, [directions]);
 
   useEffect(() => {
-    console.log(waypoints);
     fetchDirections(
       deliveryCall,
       waypoints,

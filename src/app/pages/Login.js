@@ -14,7 +14,7 @@ const Login = () => {
 
   const fetchUser = async () => {
     console.log(process.env.URL);
-    const response = await axios.get(`${process.env.URL}/auth/login`, {
+    const response = await axios.get(`https://api.aasherb.com/auth/login`, {
       withCredentials: true,
     });
     if (response && response.data) {
@@ -26,7 +26,7 @@ const Login = () => {
 
   function handleLogin() {
     let newWindow = window.open(
-      `${process.env.API_ENDPOINT}/auth/google`,
+      `https://api.aasherb.com/auth/google`,
       "__blank",
       "width=400,height=600,left=200,top=200"
     );

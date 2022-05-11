@@ -17,7 +17,7 @@ function Home() {
   const [dataLoaded, setDataLoaded] = useState(false);
   const [delivery, setDelivery] = useState([]);
   useEffect(() => {
-    axios.get(`${process.env.API_ENDPOINT}/deliveries`).then(
+    axios.get(`https://api.aasherb.com/deliveries`).then(
       (result) => {
         const realData = result.data.map((x) => {
           return x;

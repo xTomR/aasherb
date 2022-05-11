@@ -2,7 +2,7 @@ import axios from "axios";
 
 const fetchAddresses = async () => {
   const addresses = await axios
-    .get(`${process.env.API_ENDPOINT}/api/addresses`)
+    .get(`https://api.aasherb.com/api/addresses`)
     .then(
       (result) => {
         return result;

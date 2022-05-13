@@ -24,7 +24,6 @@ export function AuthProvider({ children }) {
     axios
       .get(`https://api.aasherb.com/auth/login`, { withCredentials: true })
       .then((user) => {
-        console.log("works");
         setUser(user);
         setLoggedIn(true);
       })

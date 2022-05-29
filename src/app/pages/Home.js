@@ -5,6 +5,7 @@ import Loading from "../../common/components/Loading";
 import GoogleMapContainer from "features/googleMap/GoogleMapContainer";
 import Sidebar from "../../features/sidebar/Sidebar";
 import styled from "styled-components";
+import fetchinfo from "common/functions/fetchAddresses";
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -17,6 +18,7 @@ function Home() {
   const [dataLoaded, setDataLoaded] = useState(false);
   const [delivery, setDelivery] = useState([]);
   useEffect(() => {
+    fetchinfo();
     axios.get(`https://api.aasherb.com/api/deliveries`).then(
       (result) => {
         const realData = result.data.map((x) => {

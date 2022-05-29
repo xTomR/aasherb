@@ -1,17 +1,7 @@
 import axios from "axios";
 
-const fetchAddresses = async () => {
-  const addresses = await axios
-    .get(`https://api.aasherb.com/api/addresses`)
-    .then(
-      (result) => {
-        return result;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  return addresses;
+const fetchinfo = async () => {
+  await axios.get(`https://api.aasherb.com/api/fetchinfo`).then();
 };
 
-export default fetchAddresses;
+export default fetchinfo;

@@ -18,7 +18,7 @@ function Home() {
   const [dataLoaded, setDataLoaded] = useState(false);
   const [delivery, setDelivery] = useState([]);
   useEffect(() => {
-    axios.get(`${process.env.API_URL}api/deliveries`).then(fetchinfo());
+    fetchinfo();
     axios.get(`${process.env.API_URL}api/deliveries`).then(
       (result) => {
         const realData = result.data.map((x) => {

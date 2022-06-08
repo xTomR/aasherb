@@ -67,7 +67,7 @@ const Sidebar = ({ delivery }) => {
   }, [directions]);
 
   const handleLogout = async () => {
-    await axios.get(`https://api.aasherb.com/auth/logout`, {
+    await axios.get(`${process.env.API_URL}auth/logout`, {
       withCredentials: true,
     });
     user.logout();

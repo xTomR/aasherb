@@ -22,7 +22,7 @@ export function AuthProvider({ children }) {
 
   const fetchAuthUser = () => {
     axios
-      .get(`https://api.aasherb.com/auth/login`, { withCredentials: true })
+      .get(`${process.env.API_URL}auth/login`, { withCredentials: true })
       .then((user) => {
         setUser(user);
         setLoggedIn(true);

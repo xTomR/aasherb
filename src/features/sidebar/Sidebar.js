@@ -67,7 +67,7 @@ const Sidebar = ({ delivery }) => {
   }, [directions]);
 
   const handleLogout = async () => {
-    await axios.get(`${process.env.API_URL}auth/logout`, {
+    await axios.get(`https://apiaasherb.herokuapp.com/auth/logout`, {
       withCredentials: true,
     });
     user.logout();

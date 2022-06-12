@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 
 const LoginFailure = () => {
   const clearCookie = async () => {
-    await axios.get(`${process.env.API_URL}auth/logout`, {
+    await axios.get(`https://apiaasherb.herokuapp.com/auth/logout`, {
       withCredentials: true,
     });
   };

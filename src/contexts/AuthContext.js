@@ -22,7 +22,9 @@ export function AuthProvider({ children }) {
 
   const fetchAuthUser = () => {
     axios
-      .get(`${process.env.API_URL}auth/login`, { withCredentials: true })
+      .get(`https://apiaasherb.herokuapp.com/auth/login`, {
+        withCredentials: true,
+      })
       .then((user) => {
         setUser(user);
         setLoggedIn(true);

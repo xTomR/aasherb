@@ -13,10 +13,12 @@ const Login = () => {
   }, []);
 
   const fetchUser = async () => {
-    console.log(process.env.API_URL);
-    const response = await axios.get(`${process.env.API_URL}auth/login`, {
-      withCredentials: true,
-    });
+    const response = await axios.get(
+      `https://apiaasherb.herokuapp.com/auth/login`,
+      {
+        withCredentials: true,
+      }
+    );
     if (response && response.data) {
       console.log(response);
       user.setUser(response);
@@ -27,7 +29,7 @@ const Login = () => {
 
   function handleLogin() {
     let newWindow = window.open(
-      `${process.env.API_URL}auth/google`,
+      `https://apiaasherb.herokuapp.com/auth/google`,
       "__blank",
       "width=400,height=600,left=200,top=200"
     );

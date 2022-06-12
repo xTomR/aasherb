@@ -19,7 +19,7 @@ function Home() {
   const [delivery, setDelivery] = useState([]);
   useEffect(() => {
     // fetchinfo();
-    axios.get(`${process.env.API_URL}api/deliveries`).then(
+    axios.get(`https://apiaasherb.herokuapp.com/api/deliveries`).then(
       (result) => {
         console.log(result);
         const realData = result.data.map((x) => {

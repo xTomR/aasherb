@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const fetchAddresses = async () => {
+const fetchEAutomate = async () => {
   const addresses = await axios
     .get(`https://apiaasherb.herokuapp.com/api/addresses`)
     .then(
@@ -14,4 +14,4 @@ const fetchAddresses = async () => {
   return addresses;
 };
 
-export default fetchAddresses;
+export default fetchEAutomate;

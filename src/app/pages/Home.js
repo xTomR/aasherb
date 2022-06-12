@@ -5,7 +5,7 @@ import Loading from "../../common/components/Loading";
 import GoogleMapContainer from "features/googleMap/GoogleMapContainer";
 import Sidebar from "../../features/sidebar/Sidebar";
 import styled from "styled-components";
-import fetchinfo from "common/functions/fetchAddresses";
+import fetchinfo from "common/functions/fetchinfo";
 
 const Wrapper = styled.div`
   width: 100vw;

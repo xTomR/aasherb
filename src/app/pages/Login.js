@@ -13,6 +13,7 @@ const Login = () => {
   }, []);
 
   const fetchUser = async () => {
+    console.log(process.env.API_URL);
     const response = await axios.get(`${process.env.API_URL}auth/login`, {
       withCredentials: true,
     });

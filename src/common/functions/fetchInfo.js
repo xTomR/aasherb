@@ -5,3 +5,4 @@ const fetchinfo = async () => {
 };
 
 export default fetchinfo;
+// 1

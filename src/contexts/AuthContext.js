@@ -31,7 +31,7 @@ export function AuthProvider({ children }) {
       })
       .catch((err) => {
         console.log(err);
-        console.log("error");
+        console.log("error auth login");
       })
       .finally(() => setLoading(false));
   };

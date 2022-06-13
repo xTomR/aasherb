@@ -21,7 +21,6 @@ function Home() {
     // fetchinfo();
     axios.get(`https://apiaasherb.herokuapp.com/api/deliveries`).then(
       (result) => {
-        console.log(result);
         const realData = result.data.map((x) => {
           return x;
         });

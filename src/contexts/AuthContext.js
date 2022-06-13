@@ -23,7 +23,7 @@ export function AuthProvider({ children }) {
   const fetchAuthUser = () => {
     axios
       .get(`https://apiaasherb.herokuapp.com/auth/login`, {
-        // withCredentials: true,
+        withCredentials: true,
       })
       .then((user) => {
         setUser(user);

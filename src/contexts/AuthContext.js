@@ -26,6 +26,7 @@ export function AuthProvider({ children }) {
         withCredentials: true,
       })
       .then((user) => {
+        console.log(user);
         setUser(user);
         setLoggedIn(true);
       })
